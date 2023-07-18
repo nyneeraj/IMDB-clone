@@ -47,7 +47,9 @@
 
   // Fetches data from api and calls function to add it in
   async function fetchMovies(search) {
-    const url = `https://www.omdbapi.com/?t=${search}&apikey=d19cd846`;
+    const url = `https://www.omdbapi.com/?t=${search}&apikey=57077133`;
+
+
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -71,7 +73,7 @@
 
     if (!isPresent && data.Title != undefined) {
       if (data.Poster == "N/A") {
-        data.Poster = "./images/not-found.png";
+        data.Poster = "./image/not-found.png";
       }
       suggestionList.push(data);
       const movieCard = document.createElement("div");
